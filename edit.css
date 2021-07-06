@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    background-color: #ede4cc;
+  }
+  #buttons {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  
+  button {
+    border: none;
+    background-color: #d4a285;
+    text-align: center;
+    display: inline-block;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .btn {
+    margin-bottom: 5px;
+  }
+
+  #myList{
+    background-color: rgba(87, 35, 5, 0.541);
+    float:right;
+  }
+
+  #knva{
+    display: flex;
+  }
+
+  .list_element{
+    width: 400px;
+    position: relative;
+    margin: 4px;
+    padding: 4px;
+  }
+  

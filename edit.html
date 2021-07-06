@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/konva/3.2.5/konva.min.js"></script>
+  <script src="https://unpkg.com/konva@8.0.2/konva.min.js"></script>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="edit.css"> 
+
+  <title>Konva Project</title>
+
+</head>
+
+<body>
+  <div id="knva">
+    <div id="container"> </div>
+    <div id="buttons">
+      <div id="Drawing">
+        <button id="Circle">Circle</button>
+        <button id="Rectangle">Rectangle</button>
+        <button id="Triangle">Triangle</button>
+        <button id="Arrow">Arrow</button>
+        <button id="Tick">Tick</button>
+        <button id="Draw">Draw</button>
+        <button id="Text">Text</button>
+        <input onInput="colour = this.value" type="color" class="color-picker">
+      </div>
+      <div id="Cleaning">
+        <button id='Clean'>Clean</button>
+        <button id='Cleanshapes'>Clean shapes</button>
+        <button id='CleanCircle'>Clean Circle</button>
+        <button id='CleanRectangle'>Clean Rectangle</button>
+        <button id='Undo'>Undo</button>
+      </div>
+      <div id="Image">
+        <input type="file" id="file_input">
+        <button id="save">Download</button>
+      </div>
+    </div>
+    <div id="myList"></div>
+  </div>
+
+    <script type="text/javascript" src="edit.js"></script>
+
+</body>
+
+</html>
