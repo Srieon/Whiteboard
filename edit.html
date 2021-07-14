@@ -14,32 +14,59 @@
 <body>
   <div id="knva">
     <div id="container"> </div>
-    <div id="buttons">
-      <div id="Drawing">
-        <button id="Circle">Circle</button>
-        <button id="Rectangle">Rectangle</button>
-        <button id="Triangle">Triangle</button>
-        <button id="Arrow">Arrow</button>
-        <button id="Tick">Tick</button>
-        <button id="Draw">Draw</button>
-        <button id="Text">Text</button>
-        <input onInput="colour = this.value" type="color" class="color-picker">
-      </div>
-      <div id="Cleaning">
-        <button id='Clean'>Clean</button>
-        <button id='Cleanshapes'>Clean shapes</button>
-        <button id='CleanCircle'>Clean Circle</button>
-        <button id='CleanRectangle'>Clean Rectangle</button>
-        <button id='Undo'>Undo</button>
-      </div>
-      <div id="Image">
-        <input type="file" id="file_input">
-        <button id="save">Download</button>
-      </div>
-    </div>
-    <div id="myList"></div>
-  </div>
+    
+   <div id="mySidenav" class = "sidenav">
 
+     <div class="subNav">
+       <div class="subnavbtn">Drawing</div>
+        <div class="subnav-content">
+          <button id="Circle">Circle</button>
+          <button id="Rectangle">Rectangle</button>
+          <button id="Triangle">Triangle</button>
+          <button id="Arrow">Arrow</button>
+          <button id="Tick">Tick</button>
+          <button id="Draw">Draw</button>
+          <input onInput="colour = this.value" type="color" class="color-picker">
+        </div>
+      </div>
+
+      <div class="subNav">
+        <div class="subnavbtn">Text</div>
+        <div class="subnav-content">
+          <button id="Text">Text</button>
+        </div>
+      </div>
+
+      <div class="subNav">
+        <div class="subnavbtn">Cleaning</div>
+        <div class="subnav-content">
+          <button id='Clean'>Clean</button>
+          <button id='Cleanshapes'>Clean shapes</button>
+          <button id='CleanCircle'>Clean Circle</button>
+          <button id='CleanRectangle'>Clean Rectangle</button>
+          <button id='Undo'>Undo</button>
+        </div>
+      </div>
+
+      <div class="subNav">
+        <div class="subnavbtn">Image</div>
+        <div class="subnav-content">
+          <input type="file" id="file_input">
+          <button id="save">Download</button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+    <div id="list">
+        <ul id="myList">
+          <li>hello</li>
+        </ul>
+    </div>
+  </div>
     <script type="text/javascript" src="edit.js"></script>
 
 </body>

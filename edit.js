@@ -36,8 +36,7 @@ document.getElementById("Circle").addEventListener(
       strokeWidth: 5,
       type: "Circle",
       draggable: true,
-      strokeScaleEnabled: false,
-      visible : true
+      strokeScaleEnabled: false
       // fill, 
     });
     layer.add(circle);
@@ -69,8 +68,7 @@ document.getElementById("Rectangle").addEventListener(
       type: "Rectangle",
       strokeWidth: 5,
       draggable: true,
-      strokeScaleEnabled: false,
-      visible : true
+      strokeScaleEnabled: false
       //fill
     });
     layer.add(rect);
@@ -102,8 +100,7 @@ document.getElementById("Triangle").addEventListener(
       draggable: "true",
       stroke: colour,
       strokeWidth: 5,
-      strokeScaleEnabled: false,
-      visible : true
+      strokeScaleEnabled: false
     });
     layer.add(triangle);
     shapes.push(triangle);
@@ -137,8 +134,7 @@ document.getElementById("Arrow").addEventListener(
       draggable: "true",
       strokeWidth: 5,
       strokeScaleEnabled: false,
-      hitStrokeWidth: 50,
-      visible : true
+      hitStrokeWidth: 50
     });
     layer.add(arrow);
     shapes.push(arrow);
@@ -165,7 +161,6 @@ document.getElementById("Tick").addEventListener(
       y: 100,
       type: "Tick",
       draggable: true,
-      visible : true,
       strokeScaleEnabled: false,
       sceneFunc: function (context, shape) {
         context.beginPath();
@@ -219,7 +214,6 @@ document.getElementById("Draw").addEventListener(
           stroke: colour,
           strokeWidth: 5,
           type: "Draw",
-          visible : true,
           points: [pos.x, pos.y]
         });
         shapes.push(Draw);
@@ -257,8 +251,7 @@ document.getElementById("Text").addEventListener("click", function () {
     fontSize: 20,
     type: "Text",
     draggable: true,
-    fill: colour,
-    visible : true
+    fill: colour
   });
   layer.add(text);
   shapes.push(text);
@@ -535,80 +528,21 @@ function downloadBlob(blob, name = "stage.jpeg") {
 
 
 function makeList(){
-  var select = document.getElementById("myList");
-  select.innerHTML = '';
+  var ul = document.getElementById("myList");
+  ul.innerHTML = '';
   for(var i = 0; i < shapes.length; i++)
   {
-    var div = document.createElement("div");
-    div.className = "list_element"
+    var li = document.createElement("li");
     const t = document.createTextNode(""+shapes[i]["attrs"].type);
+    li.appendChild(t);
+    document.getElementById("myList").appendChild(li);
 
-    const button = document.createElement("button");
-    button.id = "b"+i;
-    const t1 = document.createTextNode("S_&_H");
-    button.appendChild(t1);
-
-    const button2 = document.createElement("button");
-    button2.id = "t"+i;
-    const t2 = document.createTextNode("top");
-    button2.appendChild(t2);
-
-    const button3 = document.createElement("button");
-    button3.id = "d"+i;
-    const t3 = document.createTextNode("down");
-    button3.appendChild(t3);
-
-    div.id = ""+i;
-    div.appendChild(t);
-    div.appendChild(button);
-    div.appendChild(button2);
-    div.appendChild(button3);
-    document.getElementById("myList").appendChild(div);
+    var span = document.createElement("SPAN");
+    span.className = "close";
+    li.appendChild(span);
   }
 }
 
-  var div = document.getElementById("myList");
-  div.addEventListener("click",function(e){
-    var i =  e.target.id;
-    if(i[0]=='b')
-        show_and_hide(i);
-    else if(i[0]=='t')
-        move_to_top(i);
-    else if(i[0]=='d')
-        move_to_bottom(i);        
-    else
-    {
-      layer.add(reshape);
-      reshape.nodes([shapes[i]]);
-    }
 
-  });
-  div.addEventListener("dblclick", function () {
-    reshape.detach();
-  });
-
-
-  function show_and_hide(i){
-    var j = i.slice(1,);
-    if (!shapes[j]["attrs"].visible) {
-      shapes[j].show();
-    } else {
-      shapes[j].hide();
-    }
-  }
-
-  function move_to_top(i){
-    var j = i.slice(1,);
-    shapes[j].moveToTop();
-  }
-
-  function move_to_bottom(i){
-    var j = i.slice(1,);
-    shapes[j].moveToBottom();
-  }
-
-
-
-
-
+//-------------------Navbar------------------------
 
